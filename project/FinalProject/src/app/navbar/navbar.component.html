@@ -1,0 +1,182 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color fixed-top scrolling-navbar"
+            [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" routerLink="/home">Sunbeam Placement Cell </a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/home">
+          <mdb-icon fas icon="home"></mdb-icon>
+          Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/contact">
+          <mdb-icon fas icon="envelope"></mdb-icon>
+          Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/about">
+          <mdb-icon fas icon="quote-left"></mdb-icon>
+          About Us</a>
+      </li>
+
+      <!-- Dropdown -->
+
+      <li class="nav-item dropdown" *ngIf="!IsLoggedIn" dropdown>
+          <a class="nav-link dropdown-toggle waves-light" dropdownToggle mdbWavesEffect mdbWavesEffect type="button">
+            <mdb-icon fas icon="align-justify"></mdb-icon>
+            <span class="caret"></span></a>
+          <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" routerLink="/cmplogin" mdbWavesEffect>Company Login</a>
+            <a class="dropdown-item waves-light" routerLink="/cmpregister" mdbWavesEffect>Company Register</a>
+            <div class="divider dropdown-divider"></div>
+            <a class="dropdown-item waves-light" routerLink="/login" mdbWavesEffect>Login</a>
+
+          </div>
+        </li>
+
+
+    </ul>
+    <!-- Links -->
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.linkedin.com/m/login/">
+          <mdb-icon fab icon="linkedin"></mdb-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://mail.google.com/mail/">
+          <mdb-icon fab icon="google-plus"></mdb-icon>
+        </a>
+      </li>
+      <li *ngIf="IsLoggedIn" class="nav-item">
+        <a class="nav-link">
+          <div class="btn-group" mdbDropdown>
+            <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+            <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+              <a class="dropdown-item" href="#">
+                <mdb-icon fas icon="user-alt"></mdb-icon>
+                My Profile</a>
+              <a class="dropdown-item"  (click)="frame.show()">
+                <mdb-icon fas icon="edit"></mdb-icon>
+                Edit Password</a>
+                <a class="dropdown-item" routerLink="/stdinfo">
+                <mdb-icon fas icon="edit"></mdb-icon>
+                View Resume</a>
+                <a class="dropdown-item" routerLink="/stdcmp">
+                  <mdb-icon fas icon="edit"></mdb-icon>
+                  View Companies</a>
+              <a class="dropdown-item" routerLink="/register">
+                <mdb-icon fas icon="image"></mdb-icon>
+                Upload Photo</a>
+              <div class="divider dropdown-divider"></div>
+              <a class="dropdown-item"  (click)="frame1.show()"><mdb-icon fas icon="sign-out-alt"></mdb-icon>Logout</a>
+
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
+
+
+<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+          <input type="email" id="defaultForm-email" [(ngModel)]="newUser.email" [formControl]="loginFormModalEmail" class="form-control"
+                 mdbInput mdbValidate>
+          <label for="defaultForm-email">Your email</label>
+          <mdb-error
+            *ngIf="loginFormModalEmail.invalid && (loginFormModalEmail.dirty || loginFormModalEmail.touched)">
+            Input invalid
+          </mdb-error>
+          <mdb-success
+            *ngIf="loginFormModalEmail.valid && (loginFormModalEmail.dirty || loginFormModalEmail.touched)">Input
+            valid
+          </mdb-success>
+        </div>
+        <div class="md-form mb-5">
+            <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+            <input type="password" id="defaultForm-repass" [(ngModel)]="newUser.oldPassword" [formControl]="loginFormModalRepassword" class="form-control"
+                   mdbInput mdbValidate>
+            <label for="defaultForm-repass">Old Password</label>
+            <mdb-error
+              *ngIf="loginFormModalRepassword.invalid && (loginFormModalRepassword.dirty || loginFormModalRepassword.touched)">
+              Input invalid
+            </mdb-error>
+            <mdb-success
+              *ngIf="loginFormModalRepassword.valid && (loginFormModalRepassword.dirty || loginFormModalRepassword.touched)">Input
+              valid
+            </mdb-success>
+          </div>
+
+        <div class="md-form mb-4">
+          <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
+          <input type="password" id="defaultForm-pass" [(ngModel)]="newUser.newPassword" [formControl]="loginFormModalPassword" class="form-control"
+                 mdbInput mdbValidate>
+          <label for="defaultForm-pass">New password</label>
+          <mdb-error
+            *ngIf="loginFormModalPassword.invalid && (loginFormModalPassword.dirty || loginFormModalPassword.touched)">
+            Input invalid
+          </mdb-error>
+          <mdb-success
+            *ngIf="loginFormModalPassword.valid && (loginFormModalPassword.dirty || loginFormModalPassword.touched)">
+            Input valid
+          </mdb-success>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button mdbBtn color="default" class="waves-light" (click)="changePassword() " (click)= "frame.hide()" mdbWavesEffect>Change Password</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div mdbModal #frame1="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">Are you sure?</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <mdb-icon fas icon="times" size="4x" class="animated rotateIn"></mdb-icon>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a (click)="Signout()" (click)="frame1.hide()" mdbBtn color="danger" outline="true" class="waves-effect"
+          mdbWavesEffect>Yes</a>
+        <a type="button" mdbBtn color="danger" class="waves-effect" mdbWavesEffect data-dismiss="modal" (click)="frame1.hide()">No</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>

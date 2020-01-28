@@ -1,0 +1,181 @@
+<div class="bg-light">
+  <!-- Horizontal Steppers -->
+  <div class="row">
+    <div class="col-md-12" style="padding-left: 170px; padding-right: 170px;">
+
+      <!-- Stepers Wrapper -->
+      <ul class="stepper stepper-horizontal">
+
+        <!-- First Step -->
+        <li class="active">
+          <a routerLink='/acdm'>
+            <span class="circle">1</span>
+            <span class="label">Academic</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li class="active">
+          <a routerLink='/gradu'>
+            <span class="circle">2</span>
+            <span class="label">Graduation</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li class="active">
+          <a routerLink='/cdac'>
+            <span class="circle">3</span>
+            <span class="label">CDAC</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li class="active">
+          <a routerLink='/gradproject'>
+            <span class="circle">4</span>
+            <span class="label">Grad Project</span>
+          </a>
+        </li>
+
+        <li>
+          <a routerLink='/cdacproject'>
+            <span class="circle">5</span>
+            <span class="label">CDAC Project</span>
+          </a>
+        </li>
+
+      </ul>
+      <!-- /.Stepers Wrapper -->
+
+    </div>
+  </div>
+</div>
+
+<!-- /.Horizontal Steppers -->
+<div class="bg-light">
+  <!-- Material form login -->
+  <mdb-card class="col-md-8 offset-md-2">
+
+    <mdb-card-header class="info-color white-text text-center py-4 dark unique-color mt-3" style="height: 90px;">
+      <h5>
+        <strong>Enter CDAC Projects Details</strong>
+      </h5>
+
+    </mdb-card-header>
+
+
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5 pt-0">
+
+
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;">
+
+
+        <!-- Email -->
+        <div class="md-form">
+          <input class="form-control" name="projectTitle" [(ngModel)]="cdacProject.projectTitle" id="materialLoginFormEmail" mdbInput type="text">
+          <label for="materialLoginFormEmail">Project Title</label>
+        </div>
+
+
+        <!-- Password -->
+
+
+        <!-- Password -->
+        <div class="md-form row ">
+          <div class="md-form col-md-6">
+            <input class="form-control" name="duration" [(ngModel)]="cdacProject.duration" id="materialLoginFormPassword" mdbInput type="number">
+            <label for="materialLoginFormPassword">Duration</label>
+          </div>
+          <!-- Password -->
+
+        </div>
+        <div style="text-align: left;">
+            <strong style="color: black;">Platform</strong>
+
+            <h6 style="color: black;">Web Technologies</h6>
+              <mdb-checkbox [checked]="false" [default]="true" name="PHP" (change)="selectChangeHandler($event)" >JAVA EE</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="PHP">ASP.NET MVC</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="PHP">PHP</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="PHP">Angular</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="PHP">RESTful API Programming</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="PHP">Node</mdb-checkbox>
+              <h6 style="color: black;">Mobile Technologies</h6>
+              <mdb-checkbox [checked]="false" [default]="true" name="Android">Android</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="iOS">iOS</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="Hybrid Mobile Apps Programming">Hybrid Mobile Apps Programming</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="J2ME">J2ME</mdb-checkbox>
+              <h6 style="color: black;">Database Technologies</h6>
+              <mdb-checkbox [checked]="false" [default]="true" name="MySQL">MySQL</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="MS SQL Server">MS SQL Server</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="MongoDB">MongoDB</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="J2ME">J2ME</mdb-checkbox>
+              <h6 style="color: black;">Embeddes Technologies</h6>
+              <mdb-checkbox [checked]="false" [default]="true" name="Linux based RTOS">Linux based RTOS</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="Microcontroller">Microcontroller</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="Linux Device Driver">Linux Device Driver</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="Embedded Linux">Embedded Linux</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="IoT">IoT</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="Embedded RTOS">Embedded RTOS</mdb-checkbox>
+              <h6 style="color: black;">BigData</h6>
+              <mdb-checkbox [checked]="false" [default]="true" name="Hadoop">Hadoop</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="Machine Learning">Machine Learning</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="Python">Python</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="Flask">Flask</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="Keras">Keras</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="OpenCV">OpenCV</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="TKinter">TKinter</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="R Programming">R Programming</mdb-checkbox>
+              <mdb-checkbox [checked]="false" [default]="true" name="Java SEs">Java SEs</mdb-checkbox>
+
+              <table>
+                <tr *ngFor="let web of webTech">
+
+                  <td>
+                    <mdb-checkbox [checked]="false" [default]="true" name="{{web}}">{{web}}</mdb-checkbox>
+
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+
+
+
+
+        <!-- Password -->
+        <div class="md-form">
+          <mdb-icon fas icon="pencil-alt" class="prefix"></mdb-icon>
+          <textarea type="text" id="form8" name="projectDesc" [(ngModel)]="cdacProject.projectDesc" class="md-textarea form-control" mdbInput></textarea>
+          <label for="form8">Project Description</label>
+        </div>
+
+
+        <!-- Sign in button -->
+        <button (click)="Insert(name)" block="true" class="my-4 waves-effect z-depth-0" color="info" mdbBtn mdbWavesEffect
+                outline="true" rounded="true">Finish
+        </button>
+
+
+      </form>
+      <!-- Form -->
+      <div *ngIf="showMessage" class="alert alert-danger mt-3" role="alert">
+          {{message}}
+        </div>
+    </mdb-card-body>
+
+
+  </mdb-card>
+  <!-- Material form login -->
+
+
+</div>
+
+
+
+
+
+
+

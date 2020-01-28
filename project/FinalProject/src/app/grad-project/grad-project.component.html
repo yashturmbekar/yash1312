@@ -1,0 +1,131 @@
+<div class="bg-light">
+  <!-- Horizontal Steppers -->
+  <div class="row">
+    <div class="col-md-12" style="padding-left: 170px; padding-right: 170px;">
+
+      <!-- Stepers Wrapper -->
+      <ul class="stepper stepper-horizontal">
+
+        <!-- First Step -->
+        <li class="active">
+          <a routerLink='/acdm'>
+            <span class="circle">1</span>
+            <span class="label">Academic</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li class="active">
+          <a routerLink='/gradu'>
+            <span class="circle">2</span>
+            <span class="label">Graduation</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li class="active">
+          <a routerLink='/cdac'>
+            <span class="circle">3</span>
+            <span class="label">CDAC</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li>
+          <a routerLink='/gradproject'>
+            <span class="circle">4</span>
+            <span class="label">Grad Project</span>
+          </a>
+        </li>
+
+        <li>
+          <a routerLink='/cdacproject'>
+            <span class="circle">5</span>
+            <span class="label">CDAC Project</span>
+          </a>
+        </li>
+
+      </ul>
+      <!-- /.Stepers Wrapper -->
+
+    </div>
+  </div>
+</div>
+
+<!-- /.Horizontal Steppers -->
+<div class="bg-light">
+  <!-- Material form login -->
+  <mdb-card class="col-md-6 offset-md-3">
+
+    <mdb-card-header class="info-color white-text text-center py-4 dark unique-color mt-3" style="height: 90px;">
+      <h5>
+        <strong>Enter Graduation Project Details</strong>
+      </h5>
+
+    </mdb-card-header>
+
+
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5 pt-0">
+
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;">
+
+
+        <!-- Email -->
+        <div class="md-form">
+          <input class="form-control" name="projectTitle" [(ngModel)]="gradProject.projectTitle" id="materialLoginFormEmail" mdbInput type="text">
+          <label for="materialLoginFormEmail">Project Title</label>
+        </div>
+
+
+        <!-- Password -->
+
+
+        <!-- Password -->
+        <div class="md-form">
+            <input class="form-control" name="duration" [(ngModel)]="gradProject.duration" id="materialLoginFormPassword" mdbInput type="number">
+            <label for="materialLoginFormPassword">Duration</label>
+          </div>
+          <!-- Password -->
+          <div class="md-form">
+              <input class="form-control" name="duration" [(ngModel)]="gradProject.platform" id="materialLoginFormPassword" mdbInput type="text">
+              <label for="materialLoginFormPassword">Technology Used</label>
+            </div>
+
+        <!-- Password -->
+        <div class="md-form">
+          <mdb-icon fas icon="pencil-alt" class="prefix"></mdb-icon>
+          <textarea type="text" [(ngModel)]="gradProject.projectDesc" name="projectDesc" id="form8" class="md-textarea form-control" mdbInput></textarea>
+          <label for="form8">Project Description</label>
+        </div>
+
+        <div *ngIf="showMessage" class="alert alert-danger mt-3" role="alert">
+            {{message}}
+          </div>
+
+
+        <!-- Sign in button -->
+        <button (click)="Insert()" block="true" class="my-4 waves-effect z-depth-0" color="info" mdbBtn mdbWavesEffect
+                outline="true" rounded="true">Next
+        </button>
+
+
+
+      </form>
+      <!-- Form -->
+    </mdb-card-body>
+
+
+  </mdb-card>
+  <!-- Material form login -->
+
+
+</div>
+
+
+
+
+
+
+

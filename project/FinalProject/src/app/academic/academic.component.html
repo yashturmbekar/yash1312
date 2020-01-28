@@ -1,0 +1,199 @@
+
+<div class="bg-light">
+  <!-- Horizontal Steppers -->
+  <div class="row">
+    <div class="col-md-12" style="padding-left: 170px; padding-right: 170px;">
+
+      <!-- Stepers Wrapper -->
+      <ul class="stepper stepper-horizontal">
+
+        <!-- First Step -->
+        <li class="">
+          <a routerLink='/acdm'>
+            <span class="circle">1</span>
+            <span class="label">Academic</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li>
+          <a routerLink='/gradu'>
+            <span class="circle">2</span>
+            <span class="label">Graduation</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li>
+          <a routerLink='/cdac'>
+            <span class="circle">3</span>
+            <span class="label">CDAC</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li>
+          <a routerLink='/gradproject'>
+            <span class="circle">4</span>
+            <span class="label">Grad Project</span>
+          </a>
+        </li>
+
+        <li>
+          <a routerLink='/cdacproject'>
+            <span class="circle">5</span>
+            <span class="label">CDAC Project</span>
+          </a>
+        </li>
+
+      </ul>
+      <!-- /.Stepers Wrapper -->
+
+    </div>
+  </div>
+</div>
+
+<!-- /.Horizontal Steppers -->
+<div class="bg-light">
+  <!-- Material form login -->
+  <mdb-card class="col-md-8 offset-md-2">
+
+    <mdb-card-header class="info-color white-text text-center py-4 dark unique-color mt-3" style="height: 90px;">
+      <h5>
+        <strong>Enter Academic Marks</strong>
+      </h5>
+
+    </mdb-card-header>
+
+
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5 pt-0">
+        <div *ngIf="showMessage" class="alert alert-danger mt-3" role="alert">
+            {{message}}
+          </div>
+
+      <div>
+        <br/>
+        <button class="float-nonedark bg-light col-md-12 " mdbBtn>SSC Marks</button>
+      </div>
+
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;">
+
+
+        <!-- Email -->
+        <div class="md-form">
+          <input [(ngModel)]="academicMarks._10School" class="form-control" id="materialLoginFormEmail" mdbInput
+                 name="tenSchool" type="text">
+          <label for="materialLoginFormEmail">School Name</label>
+        </div>
+
+
+        <!-- Password -->
+        <div class="md-form">
+          <input [(ngModel)]="academicMarks._10Board" class="form-control" id="materialLoginFormPassword" mdbInput
+                 name="tenBoard" type="text">
+          <label for="materialLoginFormPassword">Board</label>
+        </div>
+
+        <!-- Password -->
+        <div class="md-form">
+          <input [(ngModel)]="academicMarks._10PassYear" class="form-control" id="materialLoginFormPassword" mdbInput
+                 name="tenYear" type="number">
+          <label for="materialLoginFormPassword">Year of Passing</label>
+        </div>
+        <div class="md-form">
+            <input [(ngModel)]="academicMarks._10Percentage" class="form-control" id="materialLoginFormPassword" mdbInput
+                   name="tenYear" type="number">
+            <label for="materialLoginFormPassword">Percentage</label>
+          </div>
+
+        <div class="row">
+        <!-- Password -->
+        <div class="md-form col-md-6">
+          <input [(ngModel)]="academicMarks._10ObtnMarks" class="form-control" id="materialLoginFormPassword" mdbInput
+                 name="tenObtMarks" type="number">
+          <label for="materialLoginFormPassword">Obtained Marks</label>
+        </div>
+
+        <!-- Password -->
+        <div class="md-form col-md-6">
+          <input [(ngModel)]="academicMarks._10TotalMarks" class="form-control" id="materialLoginFormPassword" mdbInput
+                 name="tenTotalMarks" type="number">
+          <label for="materialLoginFormPassword">Total Marks</label>
+        </div>
+      </div>
+
+
+        <div>
+          <br/>
+          <button class="float-nonedark bg-light col-md-12 " mdbBtn>HSC Marks</button>
+
+        </div>
+
+
+        <!-- Email -->
+        <div class="md-form">
+          <input [(ngModel)]="academicMarks._12School" class="form-control" id="materialLoginFormEmail" mdbInput
+                 name="twlCollage" type="text">
+          <label for="materialLoginFormEmail">Collage Name</label>
+        </div>
+
+        <!-- Password -->
+        <div class="md-form">
+          <input [(ngModel)]="academicMarks._12Board" class="form-control" id="materialLoginFormPassword" mdbInput
+                 name="twlBoard" type="text">
+          <label for="materialLoginFormPassword">Board</label>
+        </div>
+
+        <!-- Password -->
+
+
+        <div class="md-form">
+          <input [(ngModel)]="academicMarks._12PassYear" class="form-control" id="materialLoginFormPassword" mdbInput
+                 name="twlYear" type="number">
+          <label for="materialLoginFormPassword">Year of Passing</label>
+        </div>
+
+        <div class="md-form">
+            <input [(ngModel)]="academicMarks._12Percentage" class="form-control" id="materialLoginFormPassword" mdbInput
+                   name="twlYear" type="number">
+            <label for="materialLoginFormPassword">Year of Passing</label>
+        </div>
+
+        <div class="row">
+        <!-- Password -->
+        <div class="md-form col-md-6">
+          <input [(ngModel)]="academicMarks._12ObtnMarks" class="form-control" id="materialLoginFormPassword" mdbInput
+                 name="twlObtMarks" type="number">
+          <label for="materialLoginFormPassword">Obtained Marks</label>
+        </div>
+
+        <!-- Password -->
+        <div class="md-form col-md-6">
+          <input [(ngModel)]="academicMarks._12TotalMarks" class="form-control" id="materialLoginFormPassword" mdbInput
+                 name="twlTotalMarks" type="number">
+          <label for="materialLoginFormPassword">Total Marks</label>
+        </div>
+      </div>
+
+
+        <!-- Sign in button -->
+        <button (click)="Insert()" block="true" class="my-4 waves-effect z-depth-0" color="info" mdbBtn mdbWavesEffect
+                outline="true" rounded="true">Next
+        </button>
+
+
+      </form>
+      <!-- Form -->
+    </mdb-card-body>
+
+
+  </mdb-card>
+  <!-- Material form login -->
+
+
+</div>
+
+
+

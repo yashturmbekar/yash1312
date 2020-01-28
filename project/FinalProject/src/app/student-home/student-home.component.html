@@ -1,0 +1,97 @@
+<div class="bg-light mt-3">
+  <!-- Horizontal Steppers -->
+  <div class="row">
+      <div class="col-md-12" style="padding-left: 170px; padding-right: 170px;">
+
+        <!-- Stepers Wrapper -->
+        <ul class="stepper stepper-horizontal">
+
+          <!-- First Step -->
+          <li>
+            <a routerLink='/acdm'>
+              <span class="circle">1</span>
+              <span class="label">Academic</span>
+            </a>
+          </li>
+
+          <!-- Second Step -->
+          <li>
+            <a routerLink='/gradu'>
+              <span class="circle">2</span>
+              <span class="label">Graduation</span>
+            </a>
+          </li>
+
+          <!-- Second Step -->
+          <li>
+            <a routerLink='/cdac'>
+              <span class="circle">3</span>
+              <span class="label">CDAC</span>
+            </a>
+          </li>
+
+          <!-- Second Step -->
+          <li>
+            <a routerLink='/gradproject'>
+              <span class="circle">4</span>
+              <span class="label">Grad Project</span>
+            </a>
+          </li>
+
+          <li>
+            <a routerLink='/cdacproject'>
+              <span class="circle">5</span>
+              <span class="label">CDAC Project</span>
+            </a>
+          </li>
+
+        </ul>
+        <!-- /.Stepers Wrapper -->
+
+      </div>
+    </div>
+<div style="padding-left: 150px; padding-right: 200px;">
+    <table mdbTable>
+        <thead class="black white-text">
+          <tr>
+            <th class="menu">Registration No.</th>
+            <th>Company Name</th>
+            <th>Address</th>
+            <th>Contact</th>
+            <th>Website</th>
+            <th>Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let company of companies">
+            <th scope="row">{{company.id}}</th>
+            <td>{{company.cName}}</td>
+            <td>
+              {{company.companyAddress.address}}
+              <br>
+              {{company.companyAddress.city}}
+              <br>
+              {{company.companyAddress.state}}
+              <br>
+            </td>
+            <td>
+            {{company.email}}
+            <br>
+            {{company.phone}}
+            <br>
+            </td>
+            <td>
+              {{company.websiteName}}
+            </td>
+            <td>
+                {{company.criteria}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+</div>
+
+
+

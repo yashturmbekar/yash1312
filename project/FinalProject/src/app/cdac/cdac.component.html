@@ -1,0 +1,146 @@
+<div class="bg-light">
+  <!-- Horizontal Steppers -->
+  <div class="row">
+    <div class="col-md-12" style="padding-left: 170px; padding-right: 170px;">
+
+      <!-- Stepers Wrapper -->
+      <ul class="stepper stepper-horizontal">
+
+        <!-- First Step -->
+        <li class="active">
+          <a routerLink='/acdm'>
+            <span class="circle">1</span>
+            <span class="label">Academic</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li class="active">
+          <a routerLink='/gradu'>
+            <span class="circle">2</span>
+            <span class="label">Graduation</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li>
+          <a routerLink='/cdac'>
+            <span class="circle">3</span>
+            <span class="label">CDAC</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li>
+          <a routerLink='/gradproject'>
+            <span class="circle">4</span>
+            <span class="label">Grad Project</span>
+          </a>
+        </li>
+
+        <li>
+          <a routerLink='/cdacproject'>
+            <span class="circle">5</span>
+            <span class="label">CDAC Project</span>
+          </a>
+        </li>
+
+      </ul>
+      <!-- /.Stepers Wrapper -->
+
+    </div>
+  </div>
+</div>
+
+<!-- /.Horizontal Steppers -->
+<div class="bg-light">
+  <!-- Material form login -->
+  <mdb-card class="col-md-8 offset-md-2">
+
+    <mdb-card-header class="info-color white-text text-center py-4 dark unique-color mt-3" style="height: 90px;">
+      <h5>
+        <strong>Enter CDAC Marks</strong>
+      </h5>
+
+    </mdb-card-header>
+
+
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5 pt-0">
+
+
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;">
+
+
+        <!-- Password -->
+        <div class="md-form row">
+          <div class="md-form col-md-6">
+            <input class="form-control" name="cdac_passYear"  [(ngModel)]="CDACMarks.cdac_passYear" id="materialLoginFormPassword" mdbInput type="number">
+            <label for="materialLoginFormPassword">Year of Passing</label>
+          </div>
+          <!-- Password -->
+          <div class="md-form col-md-6">
+            <input class="form-control" name="cdac_passYear" [(ngModel)]="CDACMarks.cdac_degreePercent" id="materialLoginFormPassword" mdbInput type="number">
+            <label for="materialLoginFormPassword">Certificate Degree %</label>
+          </div>
+        </div>
+        <!-- Email -->
+        <div class="md-form row">
+          <table class="table">
+            <thead class="black white-text">
+            <tr>
+              <th scope="col" style="width: 700px;">Subjects</th>
+              <th scope="col">Marks</th>
+            </tr>
+            </thead>
+            <!-- <tbody>
+            <tr *ngFor="let subject of subjects;">
+              <td class="float-left">
+                {{subject.name}}
+              </td>
+              <td >
+                <input class="form-control form-control-sm" name="subject.id" [(ngModel)]="subject" placeholder="Marks out of 100" type="number">
+              </td>
+            </tr>
+            </tbody> -->
+          </table>
+        </div>
+        <div class="md-form row"  style="height: 40px;" *ngFor="let subject of CDACMarks.subject_marks;">
+          <div class="md-form col-md-6">
+            <h6 style="color: black;">{{subject.name}}</h6>
+
+          </div>
+          <div class="md-form col-md-4">
+            <input class="form-control form-control-sm"  [(ngModel)]="subject.marks" id= {{subject.name}} name={{subject.name}} placeholder="Marks out of 100" type="number">
+        </div>
+      </div>
+      <br>
+
+      <div *ngIf="showMessage" class="alert alert-danger mt-3" role="alert">
+          {{message}}
+        </div>
+
+        <!-- Sign in button -->
+        <button (click)="Insert()" block="true" class="my-4 waves-effect z-depth-0" color="info" mdbBtn mdbWavesEffect
+                outline="true" rounded="true">Next
+        </button>
+
+
+      </form>
+      <!-- Form -->
+    </mdb-card-body>
+
+
+  </mdb-card>
+  <!-- Material form login -->
+
+
+</div>
+
+
+
+
+
+
+

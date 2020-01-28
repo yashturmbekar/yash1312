@@ -1,0 +1,64 @@
+<div class="bg-light mt-3">
+    <div class="row">
+        <div class="col-md-12" style="padding-left: 300px; padding-right: 300px;">
+
+          <!-- Stepers Wrapper -->
+          <ul class="stepper stepper-horizontal">
+
+            <!-- First Step -->
+            <li class="active">
+              <a routerLink='/acdm'>
+                <span class="circle">1</span>
+                <span class="label">Cources</span>
+              </a>
+            </li>
+
+            <!-- Second Step -->
+            <li>
+              <a routerLink='/stddetails'>
+                <span class="circle">2</span>
+                <span class="label">Students</span>
+              </a>
+            </li>
+
+            <!-- Second Step -->
+            <li>
+              <a routerLink='/cmpdetails'>
+                <span class="circle">3</span>
+                <span class="label">Company</span>
+              </a>
+            </li>
+
+          </ul>
+          <!-- /.Stepers Wrapper -->
+
+        </div>
+      </div>
+<div style="padding-left: 150px; padding-right: 200px;">
+    <table mdbTable>
+        <thead class="black white-text">
+          <tr>
+            <th class="menu">Id</th>
+            <th>Track Name</th>
+            <th>Strength</th>
+            <th>Subjects</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let track of tracks">
+            <th scope="row">{{track.id}}</th>
+            <td>{{track.name}}</td>
+            <td>{{track.strenght}}</td>
+            <td>
+              <h6 *ngFor="let trackSubject of track.subjects">{{trackSubject.name}}</h6>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+</div>
+
+
+

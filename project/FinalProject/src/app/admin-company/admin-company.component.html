@@ -1,0 +1,166 @@
+<div class="bg-light mt-3">
+    <div class="row">
+        <div class="col-md-12" style="padding-left: 300px; padding-right: 300px;">
+
+          <!-- Stepers Wrapper -->
+          <ul class="stepper stepper-horizontal">
+
+            <!-- First Step -->
+            <li>
+              <a routerLink='/admhome'>
+                <span class="circle">1</span>
+                <span class="label">Cources</span>
+              </a>
+            </li>
+
+            <!-- Second Step -->
+            <li>
+              <a routerLink='/stddetails'>
+                <span class="circle">2</span>
+                <span class="label">Students</span>
+              </a>
+            </li>
+
+            <!-- Second Step -->
+            <li class="active">
+              <a routerLink='/cmpdetails'>
+                <span class="circle">3</span>
+                <span class="label">Company</span>
+              </a>
+            </li>
+
+          </ul>
+          <!-- /.Stepers Wrapper -->
+
+        </div>
+      </div>
+<div style="padding-left: 150px; padding-right: 200px;">
+    <table mdbTable>
+        <thead class="black white-text">
+          <tr>
+            <th class="menu">Registration No.</th>
+            <th>Company Name</th>
+            <th>Address</th>
+            <th>Contact</th>
+            <th>Website</th>
+            <th>Interview Details</th>
+            <th>Criteria</th>
+            <th>Technology</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let company of companies">
+            <th scope="row">{{company.id}}</th>
+            <td>{{company.cName}}</td>
+            <td>
+              {{company.companyAddress.address}}
+              <br>
+              {{company.companyAddress.city}}
+              <br>
+              {{company.companyAddress.state}}
+              <br>
+            </td>
+            <td>
+            {{company.email}}
+            <br>
+            {{company.phone}}
+            <br>
+            </td>
+            <td>
+              {{company.websiteName}}
+            </td>
+            <td>
+              Place : {{company.companyDetail.iPlace}},
+              <br>
+              Resume send before :  {{company.companyDetail.rDate}}
+              <br>
+              Date of Interview :  {{company.companyDetail.iDate}}
+            </td>
+            <td>
+                {{company.companyDetail.stdCriteria}}
+            </td>
+            <td>
+              {{company.companyDetail.tech}}
+          </td>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+
+</div>
+
+<div class="bg-light">
+  <!-- Material form login -->
+  <mdb-card class="col-md-8 offset-md-2">
+
+    <mdb-card-header class="info-color white-text text-center py-4 dark unique-color mt-3" style="height: 90px;">
+      <h5>
+        <strong>Search Students</strong>
+      </h5>
+
+    </mdb-card-header>
+
+
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5 pt-0">
+        <div *ngIf="showMessage" class="alert alert-danger mt-3" role="alert">
+            {{message}}
+          </div>
+
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;">
+
+
+
+
+        <!-- Password -->
+        <div class="md-form" style="height: 60px;">
+          <p>Graduation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       CDAC</p>
+          <select class="browser-default custom-select" value="Graduation" name="degree" [(ngModel)]="gradMarks.degree" style="width: 200px;">
+            <option disabled selected>Graduation</option>
+            <option value="First Class">First Class</option>
+            <option value="Second Class">Second Class</option>
+          </select>
+          &nbsp;
+          <select class="browser-default custom-select" name="streams" [(ngModel)]="gradMarks.streams" style="width: 550px;">
+            <option disabled selected>CDAC</option>
+            <option value="First Class">First Class</option>
+            <option value="Second Class">Second Class</option>
+          </select>
+        </div>
+       <br>
+        <button (click)="Search1()" block="true" class="my-4 waves-effect z-depth-0" color="info" mdbBtn mdbWavesEffect
+                outline="true" rounded="true">Search
+        </button>
+
+
+        <!-- Password -->
+        <div class="md-form" style="height: 60px;">
+          <p>Project Platform</p>
+          <select class="browser-default custom-select" value="Graduation" name="degree" [(ngModel)]="gradMarks.degree" style="width: 400px;">
+            <option disabled selected>Project Platform</option>
+            <option value="JAVA">JAVA</option>
+            <option value="PHP">PHP</option>
+            <option value="PHP">MEAN</option>
+            <option value="PHP">ASP.NET</option>
+          </select>
+        </div>
+        <br>
+        <button (click)="Search2()" block="true" class="my-4 waves-effect z-depth-0" color="info" mdbBtn mdbWavesEffect
+                outline="true" rounded="true">Search
+        </button>
+
+
+      </form>
+      <!-- Form -->
+    </mdb-card-body>
+
+
+  </mdb-card>
+  <!-- Material form login -->
+</div>
+
+
+
+

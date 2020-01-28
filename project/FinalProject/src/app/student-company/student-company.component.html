@@ -1,0 +1,50 @@
+
+<div style="padding-left: 150px; padding-right: 200px; padding-top: 100px;">
+  <table mdbTable>
+      <thead class="black white-text">
+        <tr>
+          <th class="menu">Registration No.</th>
+          <th>Company Name</th>
+          <th>Address</th>
+          <th>Contact</th>
+          <th>Website</th>
+          <th>Interview Details</th>
+          <th>Criteria</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr mdbTableCol *ngFor="let company of companies">
+          <th scope="row">{{company.id}}</th>
+          <td>{{company.cName}}</td>
+          <td>
+            {{company.companyAddress.address}}
+            <br>
+            {{company.companyAddress.city}}
+            <br>
+            {{company.companyAddress.state}}
+            <br>
+          </td>
+          <td>
+          {{company.email}}
+          <br>
+          {{company.phone}}
+          <br>
+          </td>
+          <td>
+            {{company.websiteName}}
+          </td>
+          <td>
+            Place : {{company.companyDetail.iPlace}},
+            <br>
+            Resume send before :  {{company.companyDetail.rDate}}
+            <br>
+            Date of Interview :  {{company.companyDetail.iDate}}
+          </td>
+          <td>
+              {{company.companyDetail.stdCriteria}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+</div>

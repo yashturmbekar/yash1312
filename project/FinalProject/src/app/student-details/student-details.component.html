@@ -1,0 +1,104 @@
+
+<div style="padding-top: 80px;">
+    <button mdbBtn type="button" (click)="Screen()" size="sm" class="btn btn-elegant" rounded="true" outline="true" mdbWavesEffect>Download As PDF</button>
+    <button mdbBtn type="button" routerLink="/acdm" size="sm" class="btn btn-elegant" rounded="true" outline="true" mdbWavesEffect>Add Details</button>
+
+</div>
+<div  id="content" #content>
+<div class="row" style="padding-top: 20px;">
+<img src="../../assets/img/Screenshot from 2020-01-24 19-48-10.png" style="height: 250px;">
+</div>
+<div class="mt-5 row" style="padding-left: 25px; padding-right: 25px;">
+    <div class="col-md-6 mt-3">
+        <p class="h6 font-weight-bold">Basic Information</p>
+        <p class="h6" name="yas">Name : {{myDetails.lName}} {{myDetails.fName}} {{myDetails.mName}}</p>
+        <p class="h6">Contact No : {{myDetails.phone}}</p>
+        <p class="h6">Gender : {{myDetails.gender}}</p>
+        <p class="h6">BirthDate : {{myDetails.birthDate}}</p>
+        <p class="h6">Address : {{myDetails.userAddress.address}}, {{myDetails.userAddress.city}}, {{myDetails.userAddress.state}}</p>
+      </div>
+</div>
+
+<div class="mt-3" style="padding-left: 25px; padding-right: 25px;">
+    <p class="h6 font-weight-bold" mdbTable small="true">Academic Details</p>
+    <table mdbTable bordered="true">
+        <thead>
+          <tr>
+            <th>Level</th>
+            <th>Stream</th>
+            <th>Institute</th>
+            <th>Board/University</th>
+            <th>Passing Year</th>
+            <th>Degree % </th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr mdbTableCol>
+                <th scope="row">CDAC</th>
+                <td>{{track}}</td>
+                <td>Sunbeam Info Tech Pvt Limited</td>
+                <td>----</td>
+                <td>{{cdacPassyear}}</td>
+                <td>{{cdacMarks}}</td>
+            </tr>
+          <tr mdbTableCol>
+            <th scope="row">BE</th>
+            <td>{{myDetails.gradutionDetail.streams}}</td>
+            <td>{{myDetails.gradutionDetail.acdm_clg}}</td>
+            <td>{{myDetails.gradutionDetail.acdm_uni}}</td>
+            <td>{{myDetails.gradutionDetail.acdm_pass_year}}</td>
+            <td>{{myDetails.gradutionDetail.acdm_percent}}</td>
+          </tr>
+          <tr mdbTableCol>
+              <th scope="row">XII</th>
+              <td>Science</td>
+              <td>{{myDetails.academicDetail._12School}}</td>
+              <td>{{myDetails.academicDetail._12Board}}</td>
+              <td>{{myDetails.academicDetail._12PassYear}}</td>
+              <td>{{myDetails.roleId}}</td>
+            </tr>
+            <tr mdbTableCol>
+                <th scope="row">X</th>
+                <td>General</td>
+                <td>{{myDetails.academicDetail._10School}}</td>
+                <td>{{myDetails.academicDetail._10Board}}</td>
+                <td>{{myDetails.academicDetail._10PassYear}}</td>
+                <td>{{myDetails.roleId}}</td>
+              </tr>
+        </tbody>
+      </table>
+</div>
+<div class="mt-3 row" style="padding-left: 25px; padding-right: 25px;">
+    <div class="col-md-6 mt-3">
+        <p class="h6 font-weight-bold">CDAC Project</p>
+        <p class="h6">Title : {{myDetails.cdac_Project.projectTitle}}</p>
+        <p class="h6">Platform : {{myDetails.cdac_Project.platform}}</p>
+        <p class="h6">Duration : {{myDetails.cdac_Project.duration}}</p>
+        <p class="h6">Description : {{myDetails.cdac_Project.projectDesc}}</p>
+      </div>
+</div>
+<div class="mt-1 row" style="padding-left: 25px; padding-right: 25px;">
+    <div class="col-md-6 mt-3">
+        <p class="h6 font-weight-bold">Academic Project</p>
+        <p class="h6">Title : {{myDetails.gradProject.projectTitle}}</p>
+        <p class="h6">Platform : {{myDetails.gradProject.platform}}</p>
+        <p class="h6">Duration : {{myDetails.gradProject.duration}}</p>
+        <p class="h6">Description : {{myDetails.gradProject.projectDesc}}</p>
+      </div>
+</div>
+<div class="mt-3" style="padding-left: 25px; padding-right: 25px;">
+  <strong>I hereby declare that the information given above is true to the best of my Information knowledge belief </strong>
+  <br>
+  <br>
+  <p class="h6 font-weight-bold">Date :   </p>
+  <br>
+  <p class="h6 font-weight-bold">Signature: </p>
+  <br>
+  <hr>
+  <br>
+  <br>
+  <br>
+</div>
+</div>
+
+

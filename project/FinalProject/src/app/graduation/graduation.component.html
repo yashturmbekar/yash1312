@@ -1,0 +1,285 @@
+<div class="bg-light">
+  <!-- Horizontal Steppers -->
+  <div class="row">
+    <div class="col-md-12" style="padding-left: 170px; padding-right: 170px;">
+
+      <!-- Stepers Wrapper -->
+      <ul class="stepper stepper-horizontal">
+
+        <!-- First Step -->
+        <li class="active">
+          <a routerLink='/acdm'>
+            <span class="circle">1</span>
+            <span class="label">Academic</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li>
+          <a routerLink='/gradu'>
+            <span class="circle">2</span>
+            <span class="label">Graduation</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li>
+          <a routerLink='/cdac'>
+            <span class="circle">3</span>
+            <span class="label">CDAC</span>
+          </a>
+        </li>
+
+        <!-- Second Step -->
+        <li>
+          <a routerLink='/gradproject'>
+            <span class="circle">4</span>
+            <span class="label">Grad Project</span>
+          </a>
+        </li>
+
+        <li>
+          <a routerLink='/cdacproject'>
+            <span class="circle">5</span>
+            <span class="label">CDAC Project</span>
+          </a>
+        </li>
+
+      </ul>
+      <!-- /.Stepers Wrapper -->
+
+    </div>
+  </div>
+</div>
+
+<!-- /.Horizontal Steppers -->
+<div class="bg-light">
+  <!-- Material form login -->
+  <mdb-card class="col-md-8 offset-md-2">
+
+    <mdb-card-header class="info-color white-text text-center py-4 dark unique-color mt-3" style="height: 90px;">
+      <h5>
+        <strong>Enter Graduation Marks</strong>
+      </h5>
+
+    </mdb-card-header>
+
+
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5 pt-0">
+        <div *ngIf="showMessage" class="alert alert-danger mt-3" role="alert">
+            {{message}}
+          </div>
+
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;">
+
+
+        <!-- Email -->
+        <div class="md-form">
+          <input class="form-control" name="acdm_clg" [(ngModel)]="gradMarks.acdm_clg" id="materialLoginFormEmail" mdbInput type="text">
+          <label for="materialLoginFormEmail">Collage Name</label>
+        </div>
+
+
+        <!-- Password -->
+        <div class="md-form">
+          <input class="form-control" name="acdm_uni" [(ngModel)]="gradMarks.acdm_uni" id="materialLoginFormPassword" mdbInput type="text">
+          <label for="materialLoginFormPassword">University</label>
+        </div>
+
+        <!-- Password -->
+        <div class="md-form" style="height: 60px;">
+          <p>Graduation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           Stream</p>
+          <select class="browser-default custom-select" value="Graduation" name="degree" [(ngModel)]="gradMarks.degree" style="width: 200px;">
+            <option disabled selected>Graduation</option>
+            <option value="BE">B.E.</option>
+            <option value="BETECH">BTech</option>
+          </select>
+          &nbsp;
+          <select class="browser-default custom-select" name="streams" [(ngModel)]="gradMarks.streams" style="width: 550px;">
+            <option selected>Branch</option>
+            <option value="Aerospace">Aerospace</option>
+            <option value="Agricultural">Agricultural</option>
+            <option value="Automobile">Automobile</option>
+            <option value="Automotive Engineering">Automotive Engineering</option>
+            <option value="Biomedical">Biomedical</option>
+            <option value="Biotechnology Engineering">Biotechnology Engineering</option>
+            <option value="Chemical Engineering">Chemical Engineering</option>
+            <option value="Civil">Civil</option>
+            <option value="Computer Applications">Computer Applications</option>
+            <option value="Computer Engineering">Computer Engineering</option>
+            <option value="Computer Science Engineering">Computer Science Engineering</option>
+            <option value="Computer Technology">Computer Technology</option>
+            <option value="Computers">Computers</option>
+            <option value="Cyber Security">Cyber Security</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Electrical Electronics">Electrical &amp; Electronics</option>
+            <option value="Electrical Electronics Power">Electrical Electronics &amp; Power</option>
+            <option value="Electronic and Computer Engineering">Electronic and Computer Engineering</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Electronics Communication">Electronics &amp; Communication</option>
+            <option value="Electronics Electronics">Electronics &amp; Instrumentation</option>
+            <option value="Electronics Telecommunication">Electronics &amp; Telecommunication</option>
+            <option value="71">Electronics Production &amp; Maintainance</option>
+            <option value="Environmental">Environmental</option>
+            <option value="Heat Power">Heat Power</option>
+            <option value="Industrial Electronics">Industrial Electronics</option>
+            <option value="Industrial Engineering">Industrial Engineering</option>
+            <option value="Information Systems">Information Systems</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Instrumentation">Instrumentation</option>
+            <option value="Instrumentation and Control">Instrumentation and Control</option>
+            <option value="Marine Engineering">Marine Engineering</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Mechanical Sandwich">Mechanical Sandwich</option>
+            <option value="Mechatronic">Mechatronic</option>
+            <option value="Network Management">Network Management</option>
+            <option value="Network Management and Information Security">Network Management and Information Security</option>
+            <option value="Power Electronics and Drives">Power Electronics and Drives</option>
+            <option value="Printing Technology">Printing Technology</option>
+            <option value="Production">Production</option>
+            <option value="Software Engineering">Software Engineering</option>
+            <option value="Systems Science">Systems Science</option>
+            <option value="Telecommunication">Telecommunication</option>
+            <option value="Textile Technology">Textile Technology</option>
+            <option value="Textiles">Textiles</option>
+            <option value="Wireless Engineering">Wireless Engineering</option>
+          </select>
+        </div>
+
+
+        <div class="md-form row" style="height: 80px;">
+          <!-- Password -->
+          <div class="md-form col-md-6">
+            <input class="form-control" id="materialLoginFormPassword" name="acdm_bklog" [(ngModel)]="gradMarks.acdm_bklog" mdbInput type="number">
+            <label for="materialLoginFormPassword">Total Backlogs</label>
+          </div>
+
+          <!-- Password -->
+          <div class="md-form col-md-6">
+            <input class="form-control" id="materialLoginFormPassword" name="acdm_atmpt" [(ngModel)]="gradMarks.acdm_atmpt" mdbInput type="number">
+            <label for="materialLoginFormPassword">No. of attempts</label>
+          </div>
+
+        </div>
+        <!-- Email -->
+        <div class="md-form row">
+          <table class="table">
+            <thead class="black white-text">
+            <tr>
+              <th scope="col">Marks Obtained</th>
+              <th scope="col">Total Marks</th>
+              <th scope="col">Marks Obtained</th>
+              <th scope="col">Total Marks</th>
+              <th scope="col">Year</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                <input class="form-control form-control-sm" name="sem1_obtnmarks" [(ngModel)]="gradMarks.sem1_obtnmarks" placeholder="SEM 1" type="text">
+              </td>
+              <td>
+                <input class="form-control form-control-sm" name="sem1_totalmarks" [(ngModel)]="gradMarks.sem1_totalmarks" placeholder="SEM 1" type="text">
+              <td>
+                <input class="form-control form-control-sm" name="sem2_obtnmarks" [(ngModel)]="gradMarks.sem2_obtnmarks" placeholder="SEM 2" type="text">
+              </td>
+              <td>
+                <input class="form-control form-control-sm" name="sem2_totalmarks" [(ngModel)]="gradMarks.sem2_totalmarks" placeholder="SEM 2" type="text">
+              </td>
+              <th scope="row">F.E.</th>
+            </tr>
+            <tr>
+              <td>
+                <input class="form-control form-control-sm" name="sem3_obtnmarks" [(ngModel)]="gradMarks.sem3_obtnmarks" placeholder="SEM 3" type="text">
+              </td>
+              <td>
+                <input class="form-control form-control-sm" name="sem3_totalmarks" [(ngModel)]="gradMarks.sem3_totalmarks" placeholder="SEM 3" type="text">
+              </td>
+              <td>
+                <input class="form-control form-control-sm"  name="sem4_obtnmarks" [(ngModel)]="gradMarks.sem4_obtnmarks" placeholder="SEM 4" type="text">
+              </td>
+              <td>
+                <input class="form-control form-control-sm" name="sem4_totalmarks" [(ngModel)]="gradMarks.sem4_totalmarks" placeholder="SEM 4" type="text">
+              </td>
+              <th scope="row">S.E.</th>
+            </tr>
+            <tr>
+              <td>
+                <input class="form-control form-control-sm" name="sem5_obtnmarks" [(ngModel)]="gradMarks.sem5_obtnmarks" placeholder="SEM 5" type="text">
+              </td>
+              <td>
+                <input class="form-control form-control-sm" name="sem5_totalmarks" [(ngModel)]="gradMarks.sem5_totalmarks" placeholder="SEM 5" type="text">
+              </td>
+              <td>
+                <input class="form-control form-control-sm" name="sem6_obtnmarks" [(ngModel)]="gradMarks.sem6_obtnmarks" placeholder="SEM 6" type="text">
+              </td>
+              <td>
+                <input class="form-control form-control-sm" name="sem6_totalmarks" [(ngModel)]="gradMarks.sem6_totalmarks" placeholder="SEM 6" type="text">
+              </td>
+              <th scope="row">T.E.</th>
+            </tr>
+            <tr>
+              <td>
+                <input class="form-control form-control-sm" name="sem7_obtnmarks" [(ngModel)]="gradMarks.sem7_obtnmarks" placeholder="SEM 7" type="text">
+              </td>
+              <td>
+                <input class="form-control form-control-sm" name="sem7_totalmarks" [(ngModel)]="gradMarks.sem7_totalmarks" placeholder="SEM 7" type="text">
+              </td>
+              <td>
+                <input class="form-control form-control-sm" name="sem8_obtnmarks" [(ngModel)]="gradMarks.sem8_obtnmarks" placeholder="SEM 8" type="text">
+              </td>
+              <td>
+                <input class="form-control form-control-sm" name="sem8_totalmarks" [(ngModel)]="gradMarks.sem8_totalmarks" placeholder="SEM 8" type="text">
+              </td>
+              <th scope="row">B.E.</th>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Password -->
+        <div class="md-form row">
+          <div class="md-form col-md-6">
+            <input class="form-control" id="materialLoginFormPassword" name="acdm_adm_year" [(ngModel)]="gradMarks.acdm_adm_year" mdbInput type="number">
+            <label for="materialLoginFormPassword">Year of Admission</label>
+          </div>
+          <!-- Password -->
+          <div class="md-form col-md-6">
+            <input class="form-control" id="materialLoginFormPassword" name="acdm_pass_year" [(ngModel)]="gradMarks.acdm_pass_year" mdbInput type="number">
+            <label for="materialLoginFormPassword">Year of Passing</label>
+          </div>
+        </div>
+
+
+        <!-- Password -->
+        <div class="md-form">
+          <input class="form-control" id="materialLoginFormPassword" name="acdm_percent" [(ngModel)]="gradMarks.acdm_percent" mdbInput type="number">
+          <label for="materialLoginFormPassword">University Degree %</label>
+        </div>
+
+
+        <!-- Sign in button -->
+        <button (click)="Insert()" block="true" class="my-4 waves-effect z-depth-0" color="info" mdbBtn mdbWavesEffect
+                outline="true" rounded="true">Next
+        </button>
+
+
+      </form>
+      <!-- Form -->
+    </mdb-card-body>
+
+
+  </mdb-card>
+  <!-- Material form login -->
+
+
+</div>
+
+
+
+
+
+
+

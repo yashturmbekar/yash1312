@@ -1,0 +1,226 @@
+<div class="bg-light mt-3">
+  <div class="row">
+      <div class="col-md-12" style="padding-left: 300px; padding-right: 300px;">
+
+        <!-- Stepers Wrapper -->
+        <ul class="stepper stepper-horizontal">
+
+          <!-- First Step -->
+          <li >
+            <a routerLink='/cmphome'>
+              <span class="circle">1</span>
+              <span class="label">Cources</span>
+            </a>
+          </li>
+
+          <!-- Second Step -->
+          <li class="active">
+            <a routerLink='/cmpstudent'>
+              <span class="circle">2</span>
+              <span class="label">Students</span>
+            </a>
+          </li>
+
+          <!-- Second Step -->
+          <li>
+            <a routerLink='/cmpcriteria'>
+              <span class="circle">3</span>
+              <span class="label">Company Critera</span>
+            </a>
+          </li>
+
+        </ul>
+        <!-- /.Stepers Wrapper -->
+
+      </div>
+    </div>
+
+  <div style="padding-left: 20px; padding-right:20px;">
+        <button type="button" mdbBtn color="primary" mdbWavesEffect>DAC</button>
+        <table mdbTable>
+            <thead class="black white-text">
+              <tr>
+                <th class="menu">Enrollment  No.</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Graduation %</th>
+                <th>CDAC %</th>
+                <th>Project</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr mdbTableCol *ngFor="let student of dac">
+                <th scope="row">{{student.enrollment}}</th>
+                <td>{{student.fName}}
+                  <br>
+                  {{student.lName}}
+                </td>
+                <td>
+                {{student.email}}
+                <br>
+                {{student.phone}}
+                </td>
+                <td>
+                  {{student.gradutionDetail.acdm_percent}}
+                </td>
+                <td>
+                    {{student.cdac_marks.cdac_degreePercent}}
+                </td>
+                <td>
+                    {{student.cdac_Project.projectTitle}}
+                    {{student.cdac_Project.platform}}
+                </td>
+                <td>
+                    <button mdbBtn type="button" size="sm" class="btn btn-elegant" rounded="true" outline="true" mdbWavesEffect>Send Email</button>
+                    <br>
+                    <button mdbBtn type="button" (click)="viewResume(student.id)" size="sm" class="btn btn-elegant" rounded="true" outline="true" mdbWavesEffect>View Resume</button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+
+  </div>
+
+  <div style="padding-left: 20px; padding-right:20px;">
+      <button type="button" mdbBtn color="primary" mdbWavesEffect>DBDA</button>
+      <table mdbTable>
+          <thead class="black white-text">
+            <tr>
+              <th class="menu">Enrollment  No.</th>
+              <th>Name</th>
+              <th>Contact</th>
+              <th>Graduation %</th>
+              <th>CDAC %</th>
+              <th>Project</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr mdbTableCol *ngFor="let student of dbda">
+              <th scope="row">{{student.enrollment}}</th>
+              <td>{{student.fName}}
+                <br>
+                {{student.lName}}
+              </td>
+              <td>
+              {{student.email}}
+              <br>
+              {{student.phone}}
+              </td>
+              <td>
+                {{student.gradutionDetail.acdm_percent}}
+              </td>
+              <td>
+                  {{student.cdac_marks.cdac_degreePercent}}
+              </td>
+              <td>
+                  {{student.cdac_Project.projectTitle}}
+                  {{student.cdac_Project.platform}}
+              </td>
+              <td>
+                  <button mdbBtn type="button" size="sm" class="btn btn-elegant" rounded="true" outline="true" mdbWavesEffect>Send Email</button>
+                  <br>
+                  <button mdbBtn type="button" (click)="viewResume(student.id)" size="sm" class="btn btn-elegant" rounded="true" outline="true" mdbWavesEffect>View Resume</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+  </div>
+  <div style="padding-left: 20px; padding-right:20px;">
+        <button type="button" mdbBtn color="primary" mdbWavesEffect>DMC</button>
+        <table mdbTable>
+            <thead class="black white-text">
+              <tr>
+                <th class="menu">Enrollment  No.</th>
+                <th >Name</th>
+                <th>Contact</th>
+                <th>Graduation %</th>
+                <th>CDAC %</th>
+                <th>Project</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr mdbTableCol *ngFor="let student of dmc">
+                <th scope="row">{{student.enrollment}}</th>
+                <td>{{student.fName}}
+                  <br>
+                  {{student.lName}}
+                </td>
+                <td>
+                {{student.email}}
+                <br>
+                {{student.phone}}
+                </td>
+                <td>
+                  {{student.gradutionDetail.acdm_percent}}
+                </td>
+                <td>
+                    {{student.cdac_marks.cdac_degreePercent}}
+                </td>
+                <td>
+                    {{student.cdac_Project.projectTitle}}
+                    {{student.cdac_Project.platform}}
+                </td>
+                <td class="float-left">
+                    <button mdbBtn type="button" size="sm" class="btn btn-elegant" rounded="true" outline="true" mdbWavesEffect>Send Email</button>
+                    <br>
+                    <button mdbBtn type="button"   (click)="viewResume(student.id)" size="sm" class="btn btn-elegant" rounded="true" outline="true" mdbWavesEffect>View Resume</button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+
+  </div>
+  <div style="padding-left: 20px; padding-right:20px;">
+      <button type="button" mdbBtn color="primary" mdbWavesEffect>DESD</button>
+      <table mdbTable>
+          <thead class="black white-text">
+            <tr>
+              <th class="menu">Enrollment  No.</th>
+              <th >Name</th>
+              <th>Contact</th>
+              <th>Graduation %</th>
+              <th>CDAC %</th>
+              <th>Project</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr mdbTableCol *ngFor="let student of desd">
+              <th scope="row">{{student.enrollment}}</th>
+              <td>{{student.fName}}
+                <br>
+                {{student.lName}}
+              </td>
+              <td>
+              {{student.email}}
+              <br>
+              {{student.phone}}
+              </td>
+              <td>
+                {{student.gradutionDetail.acdm_percent}}
+              </td>
+              <td>
+                  {{student.cdac_marks.cdac_degreePercent}}
+              </td>
+              <td>
+                  {{student.cdac_Project.projectTitle}}
+                  {{student.cdac_Project.platform}}
+              </td>
+              <td class="float-left">
+                  <button mdbBtn type="button" size="sm" class="btn btn-elegant" rounded="true" outline="true" mdbWavesEffect>Send Email</button>
+                  <br>
+                  <button mdbBtn type="button" (click)="viewResume(student.id)" size="sm" class="btn btn-elegant" rounded="true" outline="true" mdbWavesEffect>View Resume</button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+
+</div>
+</div>
+
+
+

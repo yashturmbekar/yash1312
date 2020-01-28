@@ -1,0 +1,110 @@
+<div class="bg-light mt-3">
+  <div class="row">
+      <div class="col-md-12" style="padding-left: 300px; padding-right: 300px;">
+
+        <!-- Stepers Wrapper -->
+        <ul class="stepper stepper-horizontal">
+
+          <!-- First Step -->
+          <li>
+            <a routerLink='/cmphome'>
+              <span class="circle">1</span>
+              <span class="label">Cources</span>
+            </a>
+          </li>
+
+          <!-- Second Step -->
+          <li>
+            <a routerLink='/cmpstudent'>
+              <span class="circle">2</span>
+              <span class="label">Students</span>
+            </a>
+          </li>
+
+          <!-- Second Step -->
+          <li class="active">
+            <a routerLink='/cmpcriteria'>
+              <span class="circle">3</span>
+              <span class="label">Company Critera</span>
+            </a>
+          </li>
+
+        </ul>
+        <!-- /.Stepers Wrapper -->
+
+      </div>
+    </div>
+<div class="bg-light">
+  <!-- Material form login -->
+  <mdb-card class="col-md-8 offset-md-2">
+
+    <mdb-card-header class="info-color white-text text-center py-4 dark unique-color mt-3" style="height: 90px;">
+      <h5>
+        <strong>Enter Company Criteria</strong>
+      </h5>
+
+    </mdb-card-header>
+
+
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5 pt-0">
+        <div *ngIf="showMessage" class="alert alert-danger mt-3" role="alert">
+            {{message}}
+          </div>
+
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;">
+
+
+        <!-- Email -->
+        <div class="md-form">
+          <input [(ngModel)]="critera.iPlace" class="form-control" id="materialLoginFormEmail" mdbInput
+                 name="tenSchool" type="text">
+          <label for="materialLoginFormEmail">Place of Interview</label>
+        </div>
+
+
+        <!-- Password -->
+        <div class="md-form">
+          <input [(ngModel)]="critera.tech" class="form-control" id="materialLoginFormPassword" mdbInput
+                 name="tenBoard" type="text">
+          <label for="materialLoginFormPassword">Tech</label>
+        </div>
+
+        <div class="row">
+        <!-- Password -->
+        <div class="md-form col-md-6">
+          <input [(ngModel)]="critera.rDate" class="form-control" id="materialLoginFormPassword" mdbInput
+                 name="tenObtMarks" type="date">
+          <label for="materialLoginFormPassword">Send Resume before</label>
+        </div>
+
+        <!-- Password -->
+        <div class="md-form col-md-6">
+          <input [(ngModel)]="critera.iDate" class="form-control" id="materialLoginFormPassword" mdbInput
+                 name="tenTotalMarks" type="date">
+          <label for="materialLoginFormPassword">Date of Interview</label>
+        </div>
+      </div>
+      <!-- Password -->
+      <div class="md-form">
+        <mdb-icon fas icon="pencil-alt" class="prefix"></mdb-icon>
+        <textarea type="text" id="form8" [(ngModel)]="critera.stdCriteria" name="stdCriteria" class="md-textarea form-control" mdbInput></textarea>
+        <label for="form8">Set Criteria for Student</label>
+      </div>
+        <!-- Sign in button -->
+        <button (click)="Insert()" block="true" class="my-4 waves-effect z-depth-0" color="info" mdbBtn mdbWavesEffect
+                outline="true" rounded="true">Set
+        </button>
+
+
+      </form>
+      <!-- Form -->
+    </mdb-card-body>
+
+
+  </mdb-card>
+  <!-- Material form login -->
+
+
+</div>
